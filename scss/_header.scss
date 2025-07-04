@@ -1,0 +1,137 @@
+@use "base";
+
+.header {
+  position: sticky;
+  top: -34px;
+  z-index: 9;
+  padding: 42px 0px 8px;
+  background: #fff8f3;
+  @include base.mobile {
+    padding: 20px 0px 10px;
+    top: -10px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  .navbar {
+    &__list {
+      margin-left: 266px;
+      display: flex;
+    }
+    &__item {
+      padding: 8px 24px;
+      > a {
+        color: #665f73;
+        line-height: 1.75;
+        &:hover {
+          text-shadow: 1px 0 0 currentColor;
+        }
+      }
+      &--icon {
+        margin-left: 5px;
+      }
+    }
+    @include base.mobile {
+      display: none;
+    }
+  }
+  &__cta {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    .login {
+      @include base.btn(116px, 48px);
+      background-color: transparent;
+      color: #201830;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    .signup {
+      @include base.btn(116px, 48px);
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    @include base.mobile {
+      display: none;
+    }
+  }
+  .mobile-btn {
+    display: none;
+    @include base.mobile {
+      display: block;
+      margin-left: auto;
+    }
+  }
+  .mobile-overlay {
+    display: none;
+    @include base.mobile {
+      display: block;
+      position: fixed;
+      z-index: 1;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s, visibility 0.25s;
+    }
+  }
+  .mobile-navbar {
+    display: none;
+    @include base.mobile {
+      background: #201830;
+      display: block;
+      padding: 10px;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 0px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s, visibility 0.25s, width 0.25s;
+      &__xicon {
+        display: block;
+        width: 25px;
+        margin-left: auto;
+        color: #fff;
+      }
+      &__item {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        > a {
+          color: #fff;
+        }
+      }
+      .mobile-header__cta {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+        .mobile-login {
+            @include base.btn(200px, 48px);
+            border: 1px solid #936CDD
+        }
+        .mobile-signup {
+            @include base.btn(200px, 48px);
+            background-color: #936CDD;
+        }
+      }
+    }
+  }
+  @include base.mobile {
+    [type="checkbox"]:checked ~ .mobile-overlay,
+    [type="checkbox"]:checked ~ .mobile-navbar {
+      visibility: visible;
+      opacity: 1;
+    }
+    [type="checkbox"]:checked ~ .mobile-navbar {
+      width: 60%;
+    }
+  }
+}

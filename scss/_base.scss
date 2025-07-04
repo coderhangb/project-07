@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.6rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@mixin btn($width: 157px, $height: 64px) {
+  padding: 0;
+  border: none;
+  display: inline-block;
+  min-width: $width;
+  background: #201830;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: $height;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+%section-heading {
+  color: #201830;
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 1.2381;
+}
+
+%section-desc {
+  color: #665f73;
+  line-height: 1.75;
+}
