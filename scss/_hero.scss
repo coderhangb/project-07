@@ -1,0 +1,291 @@
+@use "base";
+
+.hero {
+  padding: 112px 0px 140px;
+  background: #fff8f3;
+  &__inner {
+    display: flex;
+    column-gap: 130px;
+    align-items: center;
+  }
+  .hero-left {
+    &__content {
+      display: flex;
+      column-gap: 30px;
+    }
+    &__img-wrap {
+      position: relative;
+      width: 270px;
+      height: 302px;
+    }
+    &__listen-icon {
+      position: absolute;
+      bottom: -80px;
+      left: -7px;
+      animation: wiggle 1s alternate linear infinite;
+    }
+    &__info {
+      margin-top: 53px;
+    }
+    &__listener {
+      color: #201830;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1.71429;
+    }
+    &__listener-list {
+      display: flex;
+    }
+    &__listener-avatar {
+      margin-top: 10px;
+      width: 48px;
+      height: 48px;
+      background-color: #201830;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > img {
+        width: 100%;
+        object-fit: cover;
+      }
+      > span {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.83333;
+      }
+    }
+    &__listener-avatar:not(:first-child) {
+      margin-left: -18px;
+    }
+    &__podcast-stat {
+      position: relative;
+      margin-top: 8px;
+      margin-left: 118px;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: #ff9051;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 4px;
+      align-items: center;
+      animation: wiggle 1s alternate linear infinite;
+      > strong {
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 800;
+      }
+      > span {
+        color: #ffefe7;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      .hero__decor {
+        left: -59px;
+        bottom: 3px;
+      }
+    }
+    &__platform {
+      position: relative;
+      margin-top: 12px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      column-gap: 18px;
+      animation: wiggle 1s alternate linear infinite;
+      .hero__decor {
+        left: 157px;
+        bottom: -5px;
+      }
+    }
+    &__platform-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+  &__img-info {
+    position: absolute;
+    bottom: 16px;
+    left: 38px;
+    padding: 14px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 6px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 12px 44px 0px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(5px);
+    animation: wiggle 1s alternate linear infinite;
+    > strong {
+      color: #201830;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    > span {
+      color: #665f73;
+      font-size: 1.2rem;
+    }
+  }
+  &__decor {
+    position: absolute;
+  }
+  .hero-right {
+    &__heading {
+      @extend %section-heading;
+      font-size: 7rem;
+      line-height: 1.14286;
+      animation-delay: 0.5s;
+      > span {
+        position: relative;
+        z-index: 1;
+        > img {
+          position: absolute;
+          width: 85%;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -10px;
+          z-index: -1;
+        }
+      }
+    }
+    &__desc {
+      @extend %section-desc;
+      margin-top: 20px;
+      font-size: 1.8rem;
+      line-height: 1.66667;
+      animation-delay: 0.75s;
+    }
+    &__cta {
+      margin-top: 40px;
+      display: flex;
+      column-gap: 5px;
+      animation-delay: 1s;
+    }
+    &__btn {
+      @include base.btn();
+      background: #936cdd;
+    }
+    &__listen-btn {
+      @include base.btn();
+      background: transparent;
+      color: #201830;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 8px;
+    }
+  }
+  @include base.mobile {
+    padding: 42px 0px 32px;
+    &__inner {
+      display: block;
+    }
+    .hero-left {
+      &__content {
+        justify-content: space-between;
+      }
+      &__img-wrap {
+        width: 160px;
+        height: 179px;
+      }
+      &__listen-icon {
+        width: 100%;
+        bottom: -80px;
+        left: 0px;
+      }
+      &__info {
+        margin-top: 31.5px;
+      }
+      &__listener {
+        font-size: 0.8306rem;
+      }
+      &__listener-avatar {
+        margin-top: 5px;
+        width: 28.5px;
+        height: 28.5px;
+        border: 1px solid #fff;
+        > span {
+          font-size: 0.7rem;
+        }
+      }
+      &__listener-avatar:not(:first-child) {
+        margin-left: -10.5px;
+      }
+      &__podcast-stat {
+        margin-top: 4.75px;
+        margin-left: 88px;
+        width: 48.65px;
+        height: 48.65px;
+        row-gap: 1.68px;
+        > strong {
+          font-size: 0.8306rem;
+        }
+        > span {
+          font-size: 0.8306rem;
+        }
+        .hero__decor {
+          width: 27px;
+          bottom: 1.72px;
+          left: -35.5px;
+        }
+      }
+      &__platform {
+        margin-top: 7px;
+        margin-bottom: 16.61px;
+        column-gap: 10.68px;
+        .hero__decor {
+          width: 27px;
+          bottom: 0px;
+          left: 93px;
+        }
+      }
+      &__platform-icon {
+        width: 16.612px;
+        height: 16.612px;
+      }
+    }
+    &__img-info {
+      bottom: 9.5px;
+      left: 22.5px;
+      padding: 8.31px 30px 7.43px;
+      row-gap: 3px;
+      border-radius: 5.34px;
+      > strong {
+        font-size: 0.8306rem;
+      }
+      > span {
+        font-size: 0.7119rem;
+      }
+    }
+    .hero-right {
+      &__heading {
+        margin-top: 39px;
+        font-size: 3.6rem;
+        line-height: 1.27778;
+        > span {
+          > img {
+            bottom: -5px;
+          }
+        }
+      }
+      &__desc {
+        margin-top: 12px;
+        font-size: 1.4rem;
+        line-height: 1.71429;
+      }
+      &__cta {
+        margin-top: 28px;
+      }
+    }
+  }
+}

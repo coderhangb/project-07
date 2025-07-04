@@ -32,6 +32,15 @@ button {
   font-size: inherit;
 }
 
+@keyframes wiggle {
+  from {
+    transform: translate(-5px, 0);
+  }
+  to {
+    transform: translate(5px, 0);
+  }
+}
+
 @mixin btn($width: 157px, $height: 64px) {
   padding: 0;
   border: none;
@@ -51,7 +60,7 @@ button {
 }
 
 @mixin mobile {
-  @media (max-width: 576px) {
+  @media (max-width: 575.98px) {
     @content;
   }
 }
