@@ -13,6 +13,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow-x: hidden;
 }
 
 html,
@@ -38,6 +39,15 @@ button {
   }
   to {
     transform: translate(5px, 0);
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
   }
 }
 
@@ -75,4 +85,16 @@ button {
 %section-desc {
   color: #665f73;
   line-height: 1.75;
+}
+
+[data-aos] {
+  visibility: hidden;
+}
+
+[data-aos].animate__animated {
+  visibility: visible;
+}
+
+[data-aos].animate__animated {
+  pointer-events: inherit;
 }

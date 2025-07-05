@@ -1,0 +1,161 @@
+@use "base";
+
+.direct {
+  margin: 60px 0px 40px;
+  padding: 100px 0px 40px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__image-wrap {
+    margin-right: 141px;
+    order: 2;
+    animation-delay: 0.5s;
+  }
+  &__image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin infinite linear 30s;
+  }
+  &__blur {
+    width: 287px;
+    height: 287px;
+    border-radius: 50%;
+    opacity: 0.4;
+    background: #ff9051;
+    filter: blur(129px);
+  }
+  &__icon {
+    position: absolute;
+    animation: spin reverse infinite linear 30s;
+  }
+  .itune {
+    width: 148px;
+    height: 148px;
+    top: -100px;
+    left: 20px;
+  }
+  .soundclound {
+    width: 100px;
+    height: 100px;
+    top: 3px;
+    right: -80px;
+  }
+  .music {
+    width: 138px;
+    height: 138px;
+    bottom: -16px;
+    right: -50px;
+  }
+  .spotify {
+    width: 126px;
+    height: 126px;
+    bottom: -56px;
+    left: 27px;
+  }
+  .padcast {
+    width: 80px;
+    height: 80px;
+    bottom: 99px;
+    left: -100px;
+  }
+  &__content {
+    width: 40.17%;
+  }
+  &__heading {
+    @extend %section-heading;
+    > span {
+      position: relative;
+      z-index: 1;
+      > img {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -5px;
+        z-index: -1;
+      }
+    }
+  }
+  &__desc {
+    @extend %section-desc;
+    margin-top: 18px;
+  }
+  &__btn {
+    @include base.btn;
+    margin-top: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    background: #936cdd;
+  }
+  @include base.mobile {
+    margin: 81px 0px 50px;
+    padding: 50px 0px;
+    &__inner {
+      display: block;
+    }
+    &__image-wrap {
+      margin-right: 0;
+      display: flex;
+      justify-content: center;
+    }
+    &__blur {
+      width: 176px;
+      height: 176px;
+      border-radius: 50%;
+    }
+    .itune {
+      width: 89px;
+      height: 89px;
+      top: -51px;
+      left: 28px;
+    }
+    .soundclound {
+      width: 58px;
+      height: 58px;
+      top: 4px;
+      right: -61px;
+    }
+    .music {
+      width: 82px;
+      height: 82px;
+      bottom: -7px;
+      right: -33px;
+    }
+    .spotify {
+      width: 75px;
+      height: 75px;
+      bottom: -41px;
+      left: 19px;
+    }
+    .padcast {
+      width: 48px;
+      height: 48px;
+      top: 67px;
+      left: -62px;
+    }
+    &__content {
+      margin-top: 69px;
+      width: 100%;
+    }
+    &__heading {
+      font-size: 2.6rem;
+      line-height: 1.38462;
+      > span {
+        > img {
+          bottom: 0;
+        }
+      }
+    }
+    &__desc {
+      margin-top: 12px;
+    }
+    &__btn {
+      margin-top: 28px;
+    }
+  }
+}

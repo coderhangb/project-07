@@ -1024,6 +1024,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow-x: hidden;
 }
 
 html,
@@ -1051,16 +1052,36 @@ button {
     transform: translate(5px, 0);
   }
 }
-.hero .hero-right__heading {
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+.direct__heading, .hero .hero-right__heading {
   color: #201830;
   font-size: 4.2rem;
   font-weight: 700;
   line-height: 1.2381;
 }
 
-.hero .hero-right__desc {
+.direct__desc, .hero .hero-right__desc {
   color: #665f73;
   line-height: 1.75;
+}
+
+[data-aos] {
+  visibility: hidden;
+}
+
+[data-aos].animate__animated {
+  visibility: visible;
+}
+
+[data-aos].animate__animated {
+  pointer-events: inherit;
 }
 
 .header {
@@ -1268,6 +1289,7 @@ button {
 .hero {
   padding: 112px 0px 140px;
   background: #fff8f3;
+  overflow: hidden;
 }
 .hero__inner {
   display: flex;
@@ -1569,6 +1591,176 @@ button {
     line-height: 1.71429;
   }
   .hero .hero-right__cta {
+    margin-top: 28px;
+  }
+}
+
+.direct {
+  margin: 60px 0px 40px;
+  padding: 100px 0px 40px;
+}
+.direct__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.direct__image-wrap {
+  margin-right: 141px;
+  order: 2;
+  animation-delay: 0.5s;
+}
+.direct__image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin infinite linear 30s;
+}
+.direct__blur {
+  width: 287px;
+  height: 287px;
+  border-radius: 50%;
+  opacity: 0.4;
+  background: #ff9051;
+  filter: blur(129px);
+}
+.direct__icon {
+  position: absolute;
+  animation: spin reverse infinite linear 30s;
+}
+.direct .itune {
+  width: 148px;
+  height: 148px;
+  top: -100px;
+  left: 20px;
+}
+.direct .soundclound {
+  width: 100px;
+  height: 100px;
+  top: 3px;
+  right: -80px;
+}
+.direct .music {
+  width: 138px;
+  height: 138px;
+  bottom: -16px;
+  right: -50px;
+}
+.direct .spotify {
+  width: 126px;
+  height: 126px;
+  bottom: -56px;
+  left: 27px;
+}
+.direct .padcast {
+  width: 80px;
+  height: 80px;
+  bottom: 99px;
+  left: -100px;
+}
+.direct__content {
+  width: 40.17%;
+}
+.direct__heading > span {
+  position: relative;
+  z-index: 1;
+}
+.direct__heading > span > img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -5px;
+  z-index: -1;
+}
+.direct__desc {
+  margin-top: 18px;
+}
+.direct__btn {
+  padding: 0;
+  border: none;
+  display: inline-block;
+  min-width: 157px;
+  background: #201830;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 64px;
+  text-align: center;
+  margin-top: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  background: #936cdd;
+}
+.direct__btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+@media (max-width: 575.98px) {
+  .direct {
+    margin: 81px 0px 50px;
+    padding: 50px 0px;
+  }
+  .direct__inner {
+    display: block;
+  }
+  .direct__image-wrap {
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .direct__blur {
+    width: 176px;
+    height: 176px;
+    border-radius: 50%;
+  }
+  .direct .itune {
+    width: 89px;
+    height: 89px;
+    top: -51px;
+    left: 28px;
+  }
+  .direct .soundclound {
+    width: 58px;
+    height: 58px;
+    top: 4px;
+    right: -61px;
+  }
+  .direct .music {
+    width: 82px;
+    height: 82px;
+    bottom: -7px;
+    right: -33px;
+  }
+  .direct .spotify {
+    width: 75px;
+    height: 75px;
+    bottom: -41px;
+    left: 19px;
+  }
+  .direct .padcast {
+    width: 48px;
+    height: 48px;
+    top: 67px;
+    left: -62px;
+  }
+  .direct__content {
+    margin-top: 69px;
+    width: 100%;
+  }
+  .direct__heading {
+    font-size: 2.6rem;
+    line-height: 1.38462;
+  }
+  .direct__heading > span > img {
+    bottom: 0;
+  }
+  .direct__desc {
+    margin-top: 12px;
+  }
+  .direct__btn {
     margin-top: 28px;
   }
 }
