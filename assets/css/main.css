@@ -1060,14 +1060,23 @@ button {
     rotate: 360deg;
   }
 }
-.about__heading, .episode__heading, .category__heading, .direct__heading, .hero .hero-right__heading {
+@keyframes shake {
+  from {
+    rotate: 5deg;
+    transform: scale(2);
+  }
+  to {
+    rotate: -5deg;
+  }
+}
+.sub__heading, .about__heading, .episode__heading, .category__heading, .direct__heading, .hero .hero-right__heading {
   color: #201830;
   font-size: 4.2rem;
   font-weight: 700;
   line-height: 1.2381;
 }
 
-.about__desc, .episode .episode-item__desc, .category__desc, .direct__desc, .hero .hero-right__desc {
+.sub__desc, .about__desc, .episode .episode-item__desc, .category__desc, .direct__desc, .hero .hero-right__desc {
   color: #665f73;
   line-height: 1.75;
 }
@@ -2263,6 +2272,136 @@ button {
   }
   .about__decor {
     display: none;
+  }
+}
+
+.sub {
+  overflow: hidden;
+}
+.sub__inner {
+  position: relative;
+  padding: 100px;
+  border-radius: 12px;
+  background: #201830;
+}
+.sub__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+}
+.sub__heading {
+  color: #fff;
+}
+.sub__heading > span {
+  position: relative;
+  z-index: 1;
+}
+.sub__heading > span > img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+.sub__desc {
+  color: #aba6b5;
+  width: 75%;
+}
+.sub__form {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+.sub__form-name, .sub__form-mail {
+  padding: 18px 28px;
+  width: 370px;
+  color: #aba6b5;
+  line-height: 1.75;
+  border-radius: 8px;
+  background: #2b213f;
+  outline: none;
+  border: none;
+}
+.sub__form-btn {
+  padding: 0;
+  border: none;
+  display: inline-block;
+  min-width: 157px;
+  background: #201830;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 64px;
+  text-align: center;
+  background: #936cdd;
+}
+.sub__form-btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.sub__form-decor-1, .sub__form-decor-2, .sub__form-decor-3 {
+  position: absolute;
+  animation: shake alternate infinite linear 1s;
+}
+.sub__form-decor-1 {
+  color: #936cdd;
+  bottom: 45px;
+  left: 35px;
+}
+.sub__form-decor-2 {
+  color: #5bc18f;
+  top: 26px;
+  left: 528px;
+}
+.sub__form-decor-3 {
+  color: #ff9051;
+  top: 180px;
+  right: 27px;
+}
+@media (max-width: 575.98px) {
+  .sub__inner {
+    padding: 50px 18px;
+  }
+  .sub__row {
+    display: block;
+  }
+  .sub__heading {
+    font-size: 2.6rem;
+    line-height: 1.38462;
+  }
+  .sub__desc {
+    margin-top: 12px;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.71429;
+  }
+  .sub__form {
+    margin-top: 38px;
+    display: block;
+  }
+  .sub__form-name, .sub__form-mail {
+    width: 100%;
+  }
+  .sub__form-mail {
+    margin-top: 12px;
+  }
+  .sub__form-btn {
+    margin-top: 18px;
+  }
+  .sub__form-decor-1 {
+    left: 305px;
+    bottom: 67px;
+  }
+  .sub__form-decor-2 {
+    top: 481px;
+    left: 317px;
+  }
+  .sub__form-decor-3 {
+    top: 454px;
+    left: 231px;
   }
 }
 

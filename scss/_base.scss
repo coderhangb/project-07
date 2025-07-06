@@ -51,6 +51,17 @@ button {
   }
 }
 
+@keyframes shake {
+  from {
+    rotate: 5deg;
+    transform: scale(2);
+  }
+
+  to {
+    rotate: -5deg;
+  }
+}
+
 @mixin btn($width: 157px, $height: 64px) {
   padding: 0;
   border: none;
