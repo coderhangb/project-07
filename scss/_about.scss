@@ -1,0 +1,131 @@
+@use "base";
+
+.about {
+  padding: 170px 0px 160px;
+  &__inner {
+    display: flex;
+    align-items: center;
+    column-gap: 130px;
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__img-wrap {
+    display: flex;
+    align-items: center;
+    order: 2;
+  }
+  &__img-small {
+    margin-right: -70px;
+    position: relative;
+    z-index: 1;
+    width: 270px;
+    height: 284px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  &__img-big {
+    width: 370px;
+    height: 444px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .dots {
+    position: relative;
+    z-index: 1;
+    margin-right: -126px;
+    padding-left: 74px;
+  }
+  &__content {
+    position: relative;
+    width: 40.17%;
+    order: 2;
+  }
+  &__heading {
+    @extend %section-heading;
+    margin-top: 18px;
+    > span {
+      position: relative;
+      z-index: 1;
+      > img {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+  }
+  &__desc {
+    @extend %section-desc;
+    margin-top: 38px;
+  }
+  &__author {
+    margin-top: 18px;
+    color: #aba6b5;
+    font-size: 1.4rem;
+    line-height: 1.71429;
+  }
+  &__decor {
+    position: absolute;
+    top: -8px;
+    right: -297px;
+    width: 287px;
+    height: 287px;
+    border-radius: 50%;
+    opacity: 0.4;
+    background: #ff9051;
+    filter: blur(129px);
+  }
+  @include base.mobile {
+    padding: 100px 0px;
+    &__inner {
+      display: block;
+    }
+    &__image {
+        margin-top: 28px;
+    }
+    &__img-small {
+      margin-right: -39px;
+      width: 160px;
+      height: 168px;
+    }
+    &__img-big {
+      width: 218px;
+      height: 262px;
+    }
+    .dots {
+      margin-right: -74px;
+      padding-left: 47px;
+      column-gap: 5px;
+      .dot {
+        width: 5px;
+        height: 5px;
+      }
+      .dot.active {
+        width: 7px;
+        height: 7px;
+      }
+    }
+    &__content {
+      width: 100%;
+    }
+    &__heading {
+      font-size: 2.6rem;
+      line-height: 1.38462;
+    }
+    &__desc {
+      margin-top: 12px;
+      font-size: 1.4rem;
+      line-height: 1.71429;
+    }
+    &__author {
+      margin-top: 12px;
+    }
+    &__decor {
+        display: none;
+    }
+  }
+}
